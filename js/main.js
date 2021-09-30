@@ -16,6 +16,7 @@ function showMovies (Search) {
     elMoviesItem.querySelector('.movies-img').src = movie.Poster;
     elMoviesItem.querySelector('h3').textContent = movie.Title;
     elMoviesItem.querySelector('p').textContent = movie.Type;
+    elMoviesItem.querySelector('.movies-year').textContent = movie.Year;
 
     elMoviesListFragment.appendChild(elMoviesItem);
   });
