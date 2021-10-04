@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
   <title>Movies search | OMDb API</title>
   <link rel="stylesheet" href="css/bootstrap5.min.css">
 </head>
+
 <body>
   <style>
-    .movies-img{
+    .movies-img {
       object-fit: cover;
     }
   </style>
@@ -22,26 +24,43 @@
 
     <div class="row">
       <div class="col-md-4 col-lg-3">
-        <form class="py-4 js-search-form" action="https://omdbapi.com/?" method="GET">
-          <input class="form-control js-search-input" type="search" name="search" placeholder="Movie title" aria-label="Search" required>
+        <form class="py-4 js-search-form" action="https://omdbapi.com/?apikey=caed5284" method="GET">
+          <input class="form-control js-search-input" type="search" name="search" placeholder="Search Movie"
+            aria-label="Search" required>
         </form>
       </div>
     </div>
     <div class="row movies-list"></div>
   </div>
 
+  <!-- MODAL-MORE-INFO -->
+  <section class="modal fade info-modal" id="info-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3 class="info-modal__title"></h3>
+          <div>
+            <span class="info-modal__duration"></span>
+            <span class="info-modal__rating"></span>
+          </div>
+          <p class="info-modal__about"></p>
+          <p class="info-modal__awards"></p>
+          <time class="info-modal__year"></time>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <template id="movies-item-template">
-    <div class="mb-4 col-md-4 col-lg-3">
+    <div class="mb-4 col-sm-6 col-md-4 col-lg-3">
       <div class="bg-white shadow-sm rounded p-2 h-100">
         <div class="list-group-item-action">
-          <img class="img-fluid rounded movies-img" height="150"
-          src="" alt="" width="">
-          <div class="py-3 px-2">
+          <img class="img-fluid d-block w-100 rounded movies-img" height="150" src="" alt="" width="">
+          <div class="py-3 px-2 mt-2">
             <h3 class="movies-title h5"></h3>
-            <div class="d-flex justify-content-between">
-              <p class="text-warning text-capitalize"></p>
-              <span class="movies-year"></span>
+            <div class="d-flex align-items-center justify-content-between">
+              <time class="movies-year"></time>
+              <button class="btn btn-outline-warning js-more-info-button" type="button" data-imdb-id="" data-bs-toggle="modal" data-bs-target="#info-modal">More info</button>
             </div>
           </div>
         </div>
@@ -50,6 +69,8 @@
   </template>
 
 
+  <script src="js/bootstrap5.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
