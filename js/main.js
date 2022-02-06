@@ -13,7 +13,6 @@ const elModal = document.querySelector('.modal');
 
 const elMoviesItemTemplate = document.querySelector('#movies-item-template').content;
 
-
 //FUNCTION
 function getJSON (url, successFn, errorFn) {
   fetch(url)
